@@ -52,8 +52,8 @@ const ContactInfo = () => {
                       <p className='text-[16px] md:text-[20px]'>: (+66)95-725-1892</p>
                     </span>
                     <span className='flex gap-2'>
-                      <MapPin className='w-[16px] md:w-[20px] flex-shrink-0'/>
-                      <p className='text-[16px] md:text-[20px] flex-grow break-words'>: 17 Soi Udomsuk 37, Phra Khanong, Bang Chak, Bangkok 10260</p>
+                      <MapPin className='w-[16px] md:w-[20px]'/>
+                      <p className='text-[16px] md:text-[20px]'>: 17 Soi Udomsuk 37, Phra Khanong, Bang Chak, Bangkok 10260</p>
                     </span>
                   </div>
                 </div>
