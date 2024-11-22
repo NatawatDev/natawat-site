@@ -107,8 +107,6 @@ const ContactInfo = () => {
         </div>
       </div>
       
-
-
       <div className='xl:inline hidden'>
         <div className='flex w-full h-full gap-6'>
           <div className='w-[30%] h-full flex flex-col gap-6'>          

@@ -30,7 +30,7 @@ const WorkDetail = () => {
       <p className="text-[24px] md:text-[40px] xl:text-[52px] font-bold">SEE MY WORKS</p>
       <p className="text-[12px] md:text-[20px] xl:text-[32px]">Explore a selection of my featured projects for clients</p>
     </div>
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-[32px]">
+    <div className="grid grid-cols-1 xl:grid-cols-4 gap-[32px]">
       {profileExp && profileExp.map((item, index) => (
         <CardExp key={index} title={item.title} url={item.mainUrl} detail={item.detail} action={() => hanldeClickDetail(item)} />
       ))}
