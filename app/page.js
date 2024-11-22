@@ -1,28 +1,17 @@
 'use client'
 
-import Accordion from "./components/Accordion"
+import Profile from "./components/main-section/Profile"
+import Objective from "./components/main-section/Objective"
+import WorkExperience from "./components/main-section/WorkExperience"
+import WorkDetail from "./components/main-section/WorkDetail"
 
 export default function Home() {
   return (
-    <div className="w-full">
-      <div className="w-full">
-        <Accordion 
-          title="Front-End Developer" 
-          company="Sansiri Public Company Limited (Outsource)" 
-          date="November 2023 - Present"
-        >
-          <p>Develop and maintain web applications using Vue.js...</p>
-        </Accordion>
-      </div>
-
-      
-      <Accordion 
-        title="Front-End Developer" 
-        company="Choco Card Enterprise Company Limited" 
-        date="August 2022 - November 2023"
-      >
-        <p>Developed and maintained web pages using Vue.js...</p>
-      </Accordion>
+    <div className="flex flex-col gap-[64px] sm:space-y-12 md:space-y-16 lg:space-y-[200px]">
+      <Profile />
+      <Objective />
+      <WorkExperience />
+      <WorkDetail />
     </div>
   )
 }
