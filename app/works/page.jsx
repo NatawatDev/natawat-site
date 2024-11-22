@@ -1,32 +1,32 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { workExpDetail } from '@/app/constant';
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-const WorkDetail = () => {
-  const router = useRouter()
+const WorkDetailContent = () => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [workDetail, setWorkDetail] = useState(null);
 
   useEffect(() => {
-    const projectPrefix = searchParams.get('detail')
-    const findDetail = workExpDetail.find(item => item.prefix === projectPrefix)
-    setWorkDetail(findDetail)
-  }, [])
+    const projectPrefix = searchParams.get('detail');
+    const findDetail = workExpDetail.find(item => item.prefix === projectPrefix);
+    setWorkDetail(findDetail);
+  }, [searchParams]);
 
   const handleBack = () => {    
-    sessionStorage.setItem('fromWorkDetail', true)
-    router.push('/')
+    sessionStorage.setItem('fromWorkDetail', true);
+    router.push('/');
   }
 
   return (
     <div className="dark:text-[#FFFF] text-black">
       {workDetail && (
         <div>
-          <button onClick={() => handleBack()} className='pt-[45px] xl:pt-[100px] w-[24px] md:w-[36px] xl:w-[44px]'>
+          <button onClick={handleBack} className='pt-[45px] xl:pt-[100px] w-[24px] md:w-[36px] xl:w-[44px]'>
             <ChevronLeft/>
           </button>          
           <div className='flex flex-col gap-[64px] xl:gap-[44px] px-[20px] xl:px-[120px] py-[100px]'>
@@ -52,10 +52,17 @@ const WorkDetail = () => {
               <p className='text-[16px] xl:text-[28px]'>{workDetail.detail.subContent}</p>
             </div>
           </div>
-                    
         </div>
       )}
     </div>
+  );
+};
+
+const WorkDetail = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WorkDetailContent />
+    </Suspense>
   );
 };
 

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Linkedin, Github, Mail, Download  } from 'lucide-react'
+import { Linkedin, Github, Mail } from 'lucide-react'
 
 const Profile = () => {  
     const downloadCV = () => {
